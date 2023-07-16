@@ -4,8 +4,8 @@
 
 ### Todo
 
-- Star Menu
-- Game Over
+- Start Menu Screen
+- Game Over Screen
 - Score
 - Limited Flag (base on number of bombs)
 - Difficulty / Custom
