@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://i7tpyglsnh2i" path="res://Assets/boxCrate_double.png" id="4_l8h1a"]
 [ext_resource type="Texture2D" uid="uid://cnchae5fg4wvj" path="res://Assets/flagBlue2.png" id="5_v3fu4"]
 
-[node name="Tile" type="Node2D"]
+[node name="Tile" type="Node2D" groups=["Tile"]]
 script = ExtResource("1_0c2sc")
 
 [node name="back" type="Sprite2D" parent="."]

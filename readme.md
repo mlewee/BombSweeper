@@ -5,7 +5,7 @@
 ### Todo
 
 - Start Menu Screen
-- Game Over Screen
+- ~~Game Over Screen~~
 - Score
 - Limited Flag (base on number of bombs)
 - Difficulty / Custom

@@ -19,6 +19,8 @@ func set_bomb():
 
 
 func uncover():
+	if is_bomb:
+		get_parent().gameover.show()
 	if flagged == false:
 		$Cover.hide()
 		is_cover = false

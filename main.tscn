@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbwj1iptjyt2x"]
+[gd_scene load_steps=4 format=3 uid="uid://dbwj1iptjyt2x"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_8763t"]
 [ext_resource type="PackedScene" uid="uid://bgn2kkv4fs7y2" path="res://tile.tscn" id="2_ssaup"]
+[ext_resource type="PackedScene" uid="uid://jhpc07f5j8t5" path="res://game_over_screen.tscn" id="3_dg1rf"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8763t")
 
 [node name="Tile" parent="." instance=ExtResource("2_ssaup")]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverScreen" parent="UILayer" instance=ExtResource("3_dg1rf")]
+visible = false
