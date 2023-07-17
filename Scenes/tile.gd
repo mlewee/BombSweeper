@@ -25,8 +25,10 @@ func uncover(play_sound=true):
 			$Back.modulate = Color("#b56267")
 			get_parent().gameover()
 		else:
-			if play_sound:
-				$Uncover.play()
+			if is_cover:
+				get_parent().check_boxes()
+				if play_sound:
+					$Uncover.play()
 			is_cover = false
 			var count_surrounds = 0
 			for tile in get_surrounds():

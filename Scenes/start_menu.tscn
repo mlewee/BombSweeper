@@ -42,6 +42,7 @@ theme_override_font_sizes/font_size = 32
 text = "Start"
 
 [node name="QuitBtn" type="Button" parent="Panel"]
+layout_mode = 0
 offset_left = 258.0
 offset_top = 457.0
 offset_right = 379.0

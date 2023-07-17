@@ -12,6 +12,8 @@
 - Create my own Assets
 - ~~Add SFX~~
 - Add 2D Effects
+- ~~Game Complete Screen~~
+
 
 ### Bugs
 

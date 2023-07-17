@@ -18,3 +18,5 @@ visible = false
 [node name="Explosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_iodlp")
 volume_db = -5.0
+
+[connection signal="game_over" from="UILayer/GameOverScreen" to="." method="_on_game_over_screen_game_over"]
