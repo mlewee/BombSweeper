@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/tile.gd" id="1_x4fxk"]
 [ext_resource type="Texture2D" uid="uid://b42kh5d052s2h" path="res://Assets/Arts/boxCrate.png" id="2_iwv58"]
-[ext_resource type="Texture2D" uid="uid://uk6ujw3k437o" path="res://Assets/Arts/bomb.png" id="3_dnemd"]
+[ext_resource type="Texture2D" uid="uid://br1mtgv357ntn" path="res://Assets/Arts/SSRB1.png" id="3_jotai"]
 [ext_resource type="Texture2D" uid="uid://i7tpyglsnh2i" path="res://Assets/Arts/boxCrate_double.png" id="4_ok1vr"]
 [ext_resource type="Texture2D" uid="uid://cnchae5fg4wvj" path="res://Assets/Arts/flagBlue2.png" id="5_etfie"]
 [ext_resource type="AudioStream" uid="uid://88qrwvtx73lt" path="res://Assets/Audio/select1.wav" id="6_gjsv6"]
@@ -18,8 +18,8 @@ centered = false
 [node name="Bomb" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(3, 3)
-scale = Vector2(0.453125, 0.453125)
-texture = ExtResource("3_dnemd")
+scale = Vector2(0.890625, 0.890625)
+texture = ExtResource("3_jotai")
 centered = false
 
 [node name="Label" type="Label" parent="."]
