@@ -7,7 +7,7 @@
 - Start Menu Screen
 - ~~Game Over Screen~~
 - Score
-- Limited Flag (base on number of bombs)
+- ~~Limited Flag (base on number of bombs)~~
 - Difficulty / Custom
 - Create my own Assets
 

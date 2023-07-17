@@ -1,17 +1,21 @@
 extends Node2D
 
-@onready var gameover = $UILayer/GameOverScreen
 
+@onready var gameoverscreen = $UILayer/GameOverScreen
+
+
+var Tile = preload("res://tile.tscn")
+var tiles = []
 
 var row = 10
 var col = 10
 var bombs = 15
-var Tile = preload("res://tile.tscn")
-var tiles
-
+var flags = 0
+ 
 
 func _ready():
-	gameover.hide()
+	flags = bombs
+	gameoverscreen.hide()
 	for r in row:
 		for c in col:
 			var t = Tile.instantiate()
@@ -19,11 +23,6 @@ func _ready():
 			add_child(t)
 	tiles = get_tree().get_nodes_in_group("Tile")
 	set_bombs()
-	
-
-func get_tiles(tile):
-	print(tile)
-	return tile
 
 
 func set_bombs():
@@ -33,3 +32,17 @@ func set_bombs():
 		if tile.is_bomb == false:
 			tile.set_bomb()
 			n += 1
+
+
+func set_available_flags(add = true):
+	if add:
+		flags += 1
+	else:
+		flags -= 1
+
+
+func gameover():
+	for tile in tiles:
+		if tile.is_bomb:
+			tile.force_uncover()
+	gameoverscreen.show()

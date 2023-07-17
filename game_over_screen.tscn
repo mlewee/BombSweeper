@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://game_over_screen.gd" id="1_47axa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7scqk"]
-bg_color = Color(0.266667, 0.603922, 0.945098, 1)
+bg_color = Color(0, 0, 0, 0.313726)
 border_color = Color(0.0823529, 0.345098, 0.8, 1)
 corner_radius_top_left = 9
 corner_radius_top_right = 9
@@ -15,35 +15,29 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_47axa")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 640.0
-color = Color(0.0705882, 0.054902, 0, 1)
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 111.0
-offset_top = 92.0
-offset_right = 548.0
-offset_bottom = 529.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7scqk")
 
 [node name="GameOver" type="Label" parent="Panel"]
-offset_left = 49.0
-offset_top = 25.0
-offset_right = 396.0
-offset_bottom = 116.0
+layout_mode = 0
+offset_left = 153.0
+offset_top = 153.0
+offset_right = 500.0
+offset_bottom = 244.0
 theme_override_font_sizes/font_size = 64
 text = "Game Over
 "
 horizontal_alignment = 1
 
 [node name="RestartBtn" type="Button" parent="Panel"]
-offset_left = 160.0
-offset_top = 261.0
-offset_right = 281.0
-offset_bottom = 314.0
+layout_mode = 0
+offset_left = 259.0
+offset_top = 369.0
+offset_right = 380.0
+offset_bottom = 422.0
 theme_override_font_sizes/font_size = 32
 text = "Retry"
 

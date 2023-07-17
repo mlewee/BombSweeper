@@ -19,21 +19,27 @@ func set_bomb():
 
 
 func uncover():
-	if is_bomb:
-		get_parent().gameover.show()
 	if flagged == false:
 		$Cover.hide()
-		is_cover = false
-		var count_surrounds = 0
-		for tile in get_surrounds():
-			if tile.is_bomb:
-				count_surrounds += 1
-		if count_surrounds > 0:
-			$Label.text = str(count_surrounds)
+		if is_bomb:
+			$Back.modulate = Color("#b56267")
+			get_parent().gameover()
 		else:
+			is_cover = false
+			var count_surrounds = 0
 			for tile in get_surrounds():
-				if tile.is_cover:
-					tile.uncover()
+				if tile.is_bomb:
+					count_surrounds += 1
+			if count_surrounds > 0:
+				$Label.text = str(count_surrounds)
+			else:
+				for tile in get_surrounds():
+					if tile.is_cover:
+						tile.uncover()
+
+
+func force_uncover():
+	$Cover.hide()
 
 
 func get_surrounds():
@@ -60,9 +66,12 @@ func toggle_flag():
 		if flagged:
 			flagged = false
 			$Flag.hide()
+			get_parent().set_available_flags()
 		else:
-			flagged = true
-			$Flag.show()
+			if get_parent().flags > 0:
+				flagged = true
+				$Flag.show()
+				get_parent().set_available_flags(false)
 
 
 func _on_control_gui_input(event):
