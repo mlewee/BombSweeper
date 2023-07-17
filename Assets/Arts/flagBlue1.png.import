@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b42kh5d052s2h"
-path="res://.godot/imported/boxCrate.png-dbbc24cfe3084df9131909430ec34d4e.ctex"
+uid="uid://cit4k7velryw2"
+path="res://.godot/imported/flagBlue1.png-601f7d0d7e7d135e9db78b48f09ff776.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/boxCrate.png"
-dest_files=["res://.godot/imported/boxCrate.png-dbbc24cfe3084df9131909430ec34d4e.ctex"]
+source_file="res://Assets/Arts/flagBlue1.png"
+dest_files=["res://.godot/imported/flagBlue1.png-601f7d0d7e7d135e9db78b48f09ff776.ctex"]
 
 [params]
 

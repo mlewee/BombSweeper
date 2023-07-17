@@ -6,9 +6,9 @@ var is_bomb = false
  
 
 func _ready():
-	var cover_textures = ["res://Assets/boxCrate_double.png", "res://Assets/boxCrate_single.png"]
+	var cover_textures = ["res://Assets/Arts/boxCrate_double.png", "res://Assets/Arts/boxCrate_single.png"]
 	$Cover.set_texture(load(cover_textures.pick_random()))
-	var flag_textures = ["res://Assets/flagBlue1.png", "res://Assets/flagBlue2.png"]
+	var flag_textures = ["res://Assets/Arts/flagBlue1.png", "res://Assets/Arts/flagBlue2.png"]
 	$Flag.set_texture(load(flag_textures.pick_random()))
 
 
@@ -18,13 +18,15 @@ func set_bomb():
 	$Label.hide() 
 
 
-func uncover():
+func uncover(play_sound=true):
 	if flagged == false:
 		$Cover.hide()
 		if is_bomb:
 			$Back.modulate = Color("#b56267")
 			get_parent().gameover()
 		else:
+			if play_sound:
+				$Uncover.play()
 			is_cover = false
 			var count_surrounds = 0
 			for tile in get_surrounds():
@@ -35,7 +37,7 @@ func uncover():
 			else:
 				for tile in get_surrounds():
 					if tile.is_cover:
-						tile.uncover()
+						tile.uncover(false)
 
 
 func force_uncover():

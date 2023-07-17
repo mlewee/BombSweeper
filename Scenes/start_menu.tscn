@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://te5x64dfeqkn"]
+
+[ext_resource type="Script" path="res://Scenes/start_menu.gd" id="1_qckry"]
+[ext_resource type="AudioStream" uid="uid://dwmxdv881y2rn" path="res://Assets/Audio/select2.wav" id="2_yiqkw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7scqk"]
+bg_color = Color(0, 0.247059, 0.572549, 1)
+border_color = Color(0.0823529, 0.345098, 0.8, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qckry")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 640.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7scqk")
+
+[node name="BombSweeper" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 159.0
+offset_right = 558.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 64
+text = "Bomb Sweeper"
+horizontal_alignment = 1
+
+[node name="StartBtn" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 369.0
+offset_right = 380.0
+offset_bottom = 422.0
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="QuitBtn" type="Button" parent="Panel"]
+offset_left = 258.0
+offset_top = 457.0
+offset_right = 379.0
+offset_bottom = 510.0
+theme_override_font_sizes/font_size = 32
+text = "Quit
+"
+
+[node name="Select" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_yiqkw")
+volume_db = -5.0
+
+[connection signal="pressed" from="Panel/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="Panel/QuitBtn" to="." method="_on_quit_btn_pressed"]

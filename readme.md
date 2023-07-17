@@ -4,12 +4,14 @@
 
 ### Todo
 
-- Start Menu Screen
+- ~~Start Menu Screen~~
 - ~~Game Over Screen~~
 - Score
-- ~~Limited Flag (base on number of bombs)~~
+- ~~Limited Flag (base on the number of bombs)~~
 - Difficulty / Custom
 - Create my own Assets
+- ~~Add SFX~~
+- Add 2D Effects
 
 ### Bugs
 

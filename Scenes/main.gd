@@ -4,7 +4,7 @@ extends Node2D
 @onready var gameoverscreen = $UILayer/GameOverScreen
 
 
-var Tile = preload("res://tile.tscn")
+var Tile = preload("res://Scenes/tile.tscn")
 var tiles = []
 
 var row = 10
@@ -42,6 +42,7 @@ func set_available_flags(add = true):
 
 
 func gameover():
+	$Explosion.play()
 	for tile in tiles:
 		if tile.is_bomb:
 			tile.force_uncover()
