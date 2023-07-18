@@ -1,12 +1,10 @@
 extends Node2D
+class_name Main
 
 
-@onready var gameoverscreen = $UILayer/GameOverScreen
+@export var Tile : PackedScene
 
-
-var Tile = preload("res://Scenes/tile.tscn")
 var tiles = []
-
 var row = 10
 var col = 10
 var bombs = 15
@@ -19,7 +17,7 @@ func _ready():
 	flags = bombs
 	total_boxes = (row * col) - bombs
 	
-	gameoverscreen.hide()
+	%GameOverScreen.hide()
 	for r in row:
 		for c in col:
 			var t = Tile.instantiate()
@@ -33,32 +31,29 @@ func set_bombs():
 	var n = 0
 	while n < bombs:
 		var tile = tiles[randi() % len(tiles)]
-		if tile.is_bomb == false:
+		if not tile.is_bomb:
 			tile.set_bomb()
 			n += 1
 
 
 func set_available_flags(add = true):
-	if add:
-		flags += 1
-	else:
-		flags -= 1
+	flags = flags + 1 if add else flags - 1
 
 
 func check_boxes():
 	opened_boxes += 1
 	if total_boxes == opened_boxes:
-		gameoverscreen.gamecomplete()
+		%GameOverScreen.game_complete()
 
 
-func gameover(defeat=true):
+func game_over(defeat=true):
 	if defeat:
 		$Explosion.play()
 		for tile in tiles:
 			if tile.is_bomb:
 				tile.force_uncover()
-	gameoverscreen.show()
+	%GameOverScreen.show()
 
 
 func _on_game_over_screen_game_over():
-	gameover(false)
+	game_over(false)

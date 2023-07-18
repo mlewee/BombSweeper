@@ -1,4 +1,6 @@
 extends Node2D
+class_name Tile
+
 
 var is_cover = true
 var flagged = false
@@ -19,11 +21,11 @@ func set_bomb():
 
 
 func uncover(play_sound=true):
-	if flagged == false:
+	if not flagged:
 		$Cover.hide()
 		if is_bomb:
 			$Back.modulate = Color("#b56267")
-			get_parent().gameover()
+			get_parent().game_over()
 		else:
 			if is_cover:
 				get_parent().check_boxes()
@@ -49,14 +51,14 @@ func force_uncover():
 func get_surrounds():
 	var surrounds = []
 	var offsets = [
-		(Vector2.UP + Vector2.LEFT) * 64,
-		Vector2.UP * 64,
-		(Vector2.UP + Vector2.RIGHT) * 64,
-		Vector2.RIGHT * 64,
-		(Vector2.DOWN + Vector2.RIGHT) * 64,
-		Vector2.DOWN * 64,
-		(Vector2.DOWN + Vector2.LEFT) * 64,
-		Vector2.LEFT * 64,
+		(Vector2.UP + Vector2.LEFT) * 64,  # ↖
+		Vector2.UP * 64,  # ⬆
+		(Vector2.UP + Vector2.RIGHT) * 64,  # ↗
+		Vector2.RIGHT * 64,  # ➡
+		(Vector2.DOWN + Vector2.RIGHT) * 64,  # ↘
+		Vector2.DOWN * 64,  # ⬇
+		(Vector2.DOWN + Vector2.LEFT) * 64,  # ↙
+		Vector2.LEFT * 64,  # ⬅
 	]
 	for offset in offsets:
 		for tile in get_parent().tiles:

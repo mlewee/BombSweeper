@@ -1,4 +1,5 @@
 extends Control
+class_name GameOver
 
 
 signal game_over
@@ -16,6 +17,6 @@ func _on_quit_btn_pressed():
 	get_tree().quit()
 
 
-func gamecomplete():
-	$Panel/Label.text = "Finished"
+func game_complete():
+	%Label.text = "Finished"
 	emit_signal("game_over")
