@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbwj1iptjyt2x"]
+[gd_scene load_steps=6 format=3 uid="uid://dbwj1iptjyt2x"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_8763t"]
 [ext_resource type="PackedScene" uid="uid://bgn2kkv4fs7y2" path="res://Scenes/tile.tscn" id="2_ssaup"]
 [ext_resource type="PackedScene" uid="uid://jhpc07f5j8t5" path="res://Scenes/game_over_screen.tscn" id="3_dg1rf"]
 [ext_resource type="AudioStream" uid="uid://gstc6eeq6x36" path="res://Assets/Audio/explosion1.wav" id="4_iodlp"]
+[ext_resource type="AudioStream" uid="uid://lnaqgl8df4vt" path="res://Assets/Audio/win1.wav" id="5_63ned"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8763t")
@@ -18,5 +19,8 @@ visible = false
 [node name="Explosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_iodlp")
 volume_db = -5.0
+
+[node name="Win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_63ned")
 
 [connection signal="game_over" from="UILayer/GameOverScreen" to="." method="_on_game_over_screen_game_over"]

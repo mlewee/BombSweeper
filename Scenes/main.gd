@@ -56,4 +56,5 @@ func game_over(defeat=true):
 
 
 func _on_game_over_screen_game_over():
+	$Win.play()
 	game_over(false)
