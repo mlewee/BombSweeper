@@ -8,10 +8,11 @@ var is_bomb = false
  
 
 func _ready():
-	var cover_textures = ["res://Assets/Arts/boxCrate_double.png", "res://Assets/Arts/boxCrate_single.png"]
+	var click_files = Utils.dir_contents("res://Assets/Audio/click/")
+	$Uncover.stream = load(click_files.pick_random())
+	
+	var cover_textures = Utils.dir_contents("res://Assets/Arts/boxes/")
 	$Cover.set_texture(load(cover_textures.pick_random()))
-	var flag_textures = ["res://Assets/Arts/flagBlue1.png", "res://Assets/Arts/flagBlue2.png"]
-	$Flag.set_texture(load(flag_textures.pick_random()))
 
 
 func set_bomb():
@@ -21,16 +22,16 @@ func set_bomb():
 
 
 func uncover(play_sound=true):
-	if not flagged:
+	if not flagged and is_cover:
 		$Cover.hide()
 		if is_bomb:
 			$Back.modulate = Color("#b56267")
 			get_parent().game_over()
 		else:
-			if is_cover:
-				get_parent().check_boxes()
-				if play_sound:
-					$Uncover.play()
+			get_parent().check_boxes()
+			if play_sound:
+				$Uncover.play()
+				
 			is_cover = false
 			var count_surrounds = 0
 			for tile in get_surrounds():
@@ -71,12 +72,14 @@ func toggle_flag():
 	if is_cover:
 		if flagged:
 			flagged = false
-			$Flag.hide()
+			$FlagA.stop()
+			$FlagA.hide()
 			get_parent().set_available_flags()
 		else:
 			if get_parent().flags > 0:
+				$FlagA.play("default")
 				flagged = true
-				$Flag.show()
+				$FlagA.show()
 				get_parent().set_available_flags(false)
 
 

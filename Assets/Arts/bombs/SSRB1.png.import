@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdv0bbgfis4ot"
-path="res://.godot/imported/boxCrate_single.png-94f8d7095062d0efd1bdebcd77f1ea57.ctex"
+uid="uid://br1mtgv357ntn"
+path="res://.godot/imported/SSRB1.png-9cd58ffeb414f696adcf3123a5ac72b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Arts/boxCrate_single.png"
-dest_files=["res://.godot/imported/boxCrate_single.png-94f8d7095062d0efd1bdebcd77f1ea57.ctex"]
+source_file="res://Assets/Arts/bombs/SSRB1.png"
+dest_files=["res://.godot/imported/SSRB1.png-9cd58ffeb414f696adcf3123a5ac72b6.ctex"]
 
 [params]
 

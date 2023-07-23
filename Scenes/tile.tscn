@@ -1,11 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgn2kkv4fs7y2"]
+[gd_scene load_steps=9 format=3 uid="uid://bgn2kkv4fs7y2"]
 
 [ext_resource type="Script" path="res://Scenes/tile.gd" id="1_x4fxk"]
 [ext_resource type="Texture2D" uid="uid://b42kh5d052s2h" path="res://Assets/Arts/boxCrate.png" id="2_iwv58"]
-[ext_resource type="Texture2D" uid="uid://br1mtgv357ntn" path="res://Assets/Arts/SSRB1.png" id="3_jotai"]
-[ext_resource type="Texture2D" uid="uid://i7tpyglsnh2i" path="res://Assets/Arts/boxCrate_double.png" id="4_ok1vr"]
-[ext_resource type="Texture2D" uid="uid://cnchae5fg4wvj" path="res://Assets/Arts/flagBlue2.png" id="5_etfie"]
+[ext_resource type="Texture2D" uid="uid://br1mtgv357ntn" path="res://Assets/Arts/bombs/SSRB1.png" id="3_6itg4"]
+[ext_resource type="Texture2D" uid="uid://i7tpyglsnh2i" path="res://Assets/Arts/boxes/boxCrate_double.png" id="4_6wbqv"]
+[ext_resource type="Texture2D" uid="uid://cnchae5fg4wvj" path="res://Assets/Arts/flags/flagBlue2.png" id="5_foygl"]
 [ext_resource type="AudioStream" uid="uid://88qrwvtx73lt" path="res://Assets/Audio/select1.wav" id="6_gjsv6"]
+[ext_resource type="Texture2D" uid="uid://cit4k7velryw2" path="res://Assets/Arts/flags/flagBlue1.png" id="6_orox1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhjka"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_orox1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_foygl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="Tile" type="Node2D" groups=["Tile"]]
 script = ExtResource("1_x4fxk")
@@ -19,7 +34,7 @@ centered = false
 visible = false
 position = Vector2(3, 3)
 scale = Vector2(0.890625, 0.890625)
-texture = ExtResource("3_jotai")
+texture = ExtResource("3_6itg4")
 centered = false
 
 [node name="Label" type="Label" parent="."]
@@ -31,15 +46,15 @@ vertical_alignment = 1
 
 [node name="Cover" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_ok1vr")
+texture = ExtResource("4_6wbqv")
 centered = false
 
-[node name="Flag" type="Sprite2D" parent="."]
+[node name="FlagA" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(4, 3)
-scale = Vector2(0.445313, 0.445313)
-texture = ExtResource("5_etfie")
-centered = false
+position = Vector2(31.5, 31.5)
+scale = Vector2(0.414063, 0.414063)
+sprite_frames = SubResource("SpriteFrames_fhjka")
+frame_progress = 0.595321
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -49,6 +64,6 @@ offset_bottom = 64.0
 
 [node name="Uncover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_gjsv6")
-volume_db = -5.0
+volume_db = -10.0
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]

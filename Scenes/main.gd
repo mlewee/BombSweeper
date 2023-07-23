@@ -49,6 +49,7 @@ func check_boxes():
 func game_over(defeat=true):
 	if defeat:
 		$Explosion.play()
+		$GameOver.play()
 		for tile in tiles:
 			if tile.is_bomb:
 				tile.force_uncover()
