@@ -1,5 +1,10 @@
 # Bomb Sweeper
 
+## Sources
+
+- Assets and Audios: [www.kenney.nl](www.kenney.nl)
+- Audios: [sfxr](http://www.drpetter.se/project_sfxr.html)
+
 ### Godot Engine v4.1
 
 ### Todo
@@ -13,7 +18,6 @@
 - ~~Add SFX~~
 - Add 2D Effects
 - ~~Game Complete Screen~~
-
 
 ### Bugs
 
